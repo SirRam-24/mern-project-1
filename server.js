@@ -13,10 +13,10 @@ app.use(express.json())
 app.use(cors())
 app.use("/api/v1/notes" , CheckAuth ,  NotesRouter)
 app.use("/api/v1/auth" , AuthRouter)
-
+dotenv.config()
+ConfigDB()
 
 app.listen(PORT , ()=>{
-    dotenv.config()
-    ConfigDB()
+   
     console.log("Server Running")
 })
